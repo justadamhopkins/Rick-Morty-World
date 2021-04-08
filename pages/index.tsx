@@ -1,8 +1,13 @@
 import { NextPage } from "next";
-import { HomeTemplate } from "_templates/HomeTemplate/HomeTemplate";
+import { TemplateRenderer } from "_shared/TemplateRenderer/TemplateRenderer";
 
 const HomePage: NextPage = () => {
-  return <HomeTemplate title="Rick and Morty FE Tech Test" />;
+  return (
+    <TemplateRenderer
+      templateName="home"
+      templateProps={{ title: "Rick and Morty FE Tech Test" }}
+    />
+  );
 };
 
 export default HomePage;
