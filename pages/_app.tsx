@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
-import { GlobalStyles } from "styles/GlobalStyles";
-import { GlobalFontStyles } from "styles/GlobalFontStyles";
+import { GlobalStyles } from "_styles/GlobalStyles";
+import { GlobalFontStyles } from "_styles/GlobalFontStyles";
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
