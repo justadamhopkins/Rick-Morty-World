@@ -1,10 +1,9 @@
 const withFonts = require("next-fonts");
 const withImages = require("next-images");
+const withPlugins = require("next-compose-plugins");
 
-module.exports = withFonts(
-  withImages({
-    webpack(config, options) {
-      return config;
-    },
-  })
-);
+module.exports = withPlugins([withFonts, withImages], {
+  images: {
+    domains: ["rickandmortyapi.com"],
+  },
+});
