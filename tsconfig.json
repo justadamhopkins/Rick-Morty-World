@@ -7,7 +7,7 @@
       "_organisms/*": ["src/components/_organisms/*"],
       "_templates/*": ["src/components/_templates/*"],
       "_shared/*": ["src/components/_shared/*"],
-      "styles/*": ["src/styles/*"]
+      "_styles/*": ["src/styles/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
