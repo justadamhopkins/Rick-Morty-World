@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title should render a single card component 1`] = `
+<DocumentFragment>
+  <h1
+    class="styles__StyledTitle-b4jvka-0 gVORke"
+  >
+    mockCopy
+  </h1>
+</DocumentFragment>
+`;
