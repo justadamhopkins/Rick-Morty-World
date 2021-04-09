@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledHeroWrapper } from "src/components/_organisms/Hero/styles";
+import { StyledHeroWrapper } from "_organisms/Hero/styles";
 
 export const StyledHomePageWrapper = styled.div`
   position: relative;

@@ -1,22 +1,29 @@
 import { FC } from "react";
-import {
-  Wrapper,
-  IntroImage,
-  IntroCopy,
-  StyledHomePageWrapper,
-} from "./styles";
-import { Button } from "_atoms/Button/Button";
+import { StyledHomePageWrapper, StyledSection } from "./styles";
 import { Meta } from "_shared/Meta/Meta";
 import { Hero } from "_organisms/Hero/Hero";
 import { Title } from "_atoms/Title/Title";
 import { Card } from "_molecules/Card/Card";
 
-interface IIntroTemplateProps {
-  className?: string;
+interface HomeTemplateProps {
   title: string;
+  data: LickApi.ICharacterCore[];
 }
 
-export const HomeTemplate: FC<IIntroTemplateProps> = ({ className, title }) => {
+const cardVariant = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2,
+      staggerDirection: 1,
+      when: "afterChildren",
+    },
+  },
+};
+
+export const HomeTemplate: FC<HomeTemplateProps> = ({ title, data }) => {
   return (
     <>
       <Meta title={title} />
@@ -24,7 +31,20 @@ export const HomeTemplate: FC<IIntroTemplateProps> = ({ className, title }) => {
         <Hero>
           <Title copy="Rick and Morty" />
         </Hero>
-        <Card />
+        <StyledSection>
+          {data.map(({ name, gender, species, id, avatar }) => {
+            return (
+              <Card
+                key={id}
+                name={name}
+                gender={gender}
+                species={species}
+                characterId={id}
+                image={avatar}
+              />
+            );
+          })}
+        </StyledSection>
       </StyledHomePageWrapper>
     </>
   );
