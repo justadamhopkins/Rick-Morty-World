@@ -4,6 +4,7 @@ import { breakpoint } from "./BreakpointStyles";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
+    --white: #fff;
     --materialBlack: #282c35;
     --darkGrey: #464655;
     --darkPurps: #686276;
@@ -28,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     color: '#1a202c';
     font-size: 62.5%;
-    font-family: 'firaCode', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'firaCode-regular', Tahoma, Geneva, Verdana
   }
   html,
   body {
