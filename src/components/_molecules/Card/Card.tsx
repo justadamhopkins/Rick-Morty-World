@@ -1,18 +1,33 @@
 import { FC } from "react";
 import Image from "next/image";
-import { Button } from "_atoms/Button/Button";
 import {
   StyledCardWrapper,
   StyledCardImageWrapper,
-  StyledCardButtonWrapper,
+  StyledCardLinkWrapper,
+  StyledLink,
 } from "./styles";
+import Link from "next/link";
 
-export const Card: FC = () => {
+interface Props {
+  name: string;
+  gender: string;
+  species: string;
+  characterId: number;
+  image: string;
+}
+
+export const Card: FC<Props> = ({
+  name,
+  gender,
+  species,
+  image,
+  characterId,
+}) => {
   return (
     <StyledCardWrapper>
       <StyledCardImageWrapper>
         <Image
-          src={"https://rickandmortyapi.com/api/character/avatar/1.jpeg"}
+          src={image}
           alt={"altText"}
           height={300}
           width={300}
@@ -20,13 +35,15 @@ export const Card: FC = () => {
         />
       </StyledCardImageWrapper>
       <ul>
-        <li>Name:</li>
-        <li>Gender:</li>
-        <li>Species:</li>
+        <li>Name: {name}</li>
+        <li>Gender: {gender}</li>
+        <li>Species: {species}</li>
       </ul>
-      <StyledCardButtonWrapper>
-        <Button />
-      </StyledCardButtonWrapper>
+      <StyledCardLinkWrapper>
+        <Link href={`/character/${characterId}`} passHref>
+          <StyledLink>View Profile</StyledLink>
+        </Link>
+      </StyledCardLinkWrapper>
     </StyledCardWrapper>
   );
 };
