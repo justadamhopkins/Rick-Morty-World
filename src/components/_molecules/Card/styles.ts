@@ -11,6 +11,10 @@ export const StyledCardWrapper = styled.div`
       color: var(--white);
       font-size: 1.6rem;
       padding-left: 5px;
+      span {
+        color: var(--darkPink);
+        padding-right: 5px;
+      }
       :nth-child(1) {
         background-color: var(--darkPurps);
       }

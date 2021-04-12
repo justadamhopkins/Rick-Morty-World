@@ -35,9 +35,17 @@ export const Card: FC<Props> = ({
         />
       </StyledCardImageWrapper>
       <ul>
-        <li>Name: {name}</li>
-        <li>Gender: {gender}</li>
-        <li>Species: {species}</li>
+        <li>
+          <span>Name:</span> {name}
+        </li>
+        <li>
+          <span>Gender:</span>
+          {gender}
+        </li>
+        <li>
+          <span>Species: </span>
+          {species}
+        </li>
       </ul>
       <StyledCardLinkWrapper>
         <Link href={`/character/${characterId}`} passHref>
