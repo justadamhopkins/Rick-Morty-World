@@ -1,13 +1,16 @@
 import { AppProps } from "next/app";
 import { GlobalStyles } from "_styles/GlobalStyles";
 import { GlobalFontStyles } from "_styles/GlobalFontStyles";
+import { SharedLayout } from "_shared/SharedLayout/SharedLayout";
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <GlobalStyles />
       <GlobalFontStyles />
-      <Component {...pageProps} />
+      <SharedLayout>
+        <Component {...pageProps} />
+      </SharedLayout>
     </>
   );
 };
