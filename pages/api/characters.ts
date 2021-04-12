@@ -18,27 +18,23 @@ export const charactersHandler = nc().get(
       const characters: {
         results;
       } = await data.json();
-      const formatCharacters = characters.results.reduce(
-        (acc, { id, name, status, species, image, gender }) => {
-          return [
-            ...acc,
-            {
-              id,
-              name,
-              status,
-              species,
-              gender,
-              avatar: image,
-            },
-          ];
-        },
-        []
+
+      const formatCharacters = characters.results.map(
+        ({ id, name, status, species, image, gender }) => {
+          return {
+            id,
+            name,
+            status,
+            species,
+            gender,
+            avatar: image,
+          };
+        }
       );
 
       return res.status(200).json(formatCharacters);
     } catch (error) {
-      console.log("hehehe");
-      return res.status(400).json({
+      return res.status(404).json({
         error: `Rick and Morty are both dead come back in the year 3032`,
       });
     }
