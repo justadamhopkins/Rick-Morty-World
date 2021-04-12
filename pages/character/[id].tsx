@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import absoluteUrl from "next-absolute-url";
 import { useRouter } from "next/router";
 
 const Character = () => {
@@ -14,8 +15,11 @@ const Character = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({
   query: { id },
+  req,
 }) => {
-  const res = await fetch(`http://localhost:3000/api/character/${id}`);
+  const { protocol, host } = absoluteUrl(req, "localhost:3000");
+
+  const res = await fetch(`${protocol}//${host}/api/character/${id}`);
 
   const data = await res.json();
 

@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { TemplateRenderer } from "_shared/TemplateRenderer/TemplateRenderer";
 import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
+import absoluteUrl from "next-absolute-url";
 
 const HomePage: NextPage = ({
   data,
@@ -15,8 +16,10 @@ const HomePage: NextPage = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/characters");
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const { protocol, host } = absoluteUrl(req, "localhost:3000");
+
+  const res = await fetch(`${protocol}//${host}/api/characters`);
 
   const data = await res.json();
 
