@@ -8,4 +8,5 @@ export const StyledHeroWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  margin: -2rem;
 `;
