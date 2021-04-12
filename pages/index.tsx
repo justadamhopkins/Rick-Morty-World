@@ -10,12 +10,14 @@ const HomePage: NextPage = ({
     <TemplateRenderer
       templateName="home"
       templateProps={{ title: "Rick and Morty FE Tech Test", data }}
+      metaTitle="Rick and Morty"
     />
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch("http://localhost:3000/api/characters");
+
   const data = await res.json();
 
   return { props: { data } };
