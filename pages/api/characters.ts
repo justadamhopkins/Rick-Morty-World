@@ -2,6 +2,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
 import Cors from "micro-cors";
 
+interface CharactersResponse extends Omit<LickApi.ICharacterCore, "avatar"> {
+  image: string;
+}
+
 const cors = Cors({
   allowMethods: ["POST", "HEAD", "GET"],
 });
@@ -15,12 +19,17 @@ export const charactersHandler = nc().get(
         `${process.env.RM_BASE_ENDPOINT}/character/?name=rick&status=alive`
       );
 
-      const characters: {
-        results;
-      } = await data.json();
+      const { results }: { results: CharactersResponse[] } = await data.json();
 
-      const formatCharacters = characters.results.map(
-        ({ id, name, status, species, image, gender }) => {
+      const formatCharacters = results.map(
+        ({
+          id,
+          name,
+          status,
+          species,
+          image,
+          gender,
+        }): LickApi.ICharacterCore => {
           return {
             id,
             name,
@@ -34,8 +43,8 @@ export const charactersHandler = nc().get(
 
       return res.status(200).json(formatCharacters);
     } catch (error) {
-      return res.status(404).json({
-        error: `Rick and Morty are both dead come back in the year 3032`,
+      return res.status(500).json({
+        error: `This character is no longer around come back in the year 3032`,
       });
     }
   }
