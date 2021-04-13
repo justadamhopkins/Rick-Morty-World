@@ -6,7 +6,7 @@ export const StyledCardWrapper = styled.div`
   width: 100%;
   background-color: var(--white);
   ul {
-    padding: 10px;
+    padding: 5px;
     li {
       color: var(--white);
       font-size: 1.6rem;
