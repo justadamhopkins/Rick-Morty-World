@@ -29,11 +29,13 @@ This project was built using NextJS, Typescript and CSS-IN-JS. I used Jest and R
 - Path aliases implemented using Typescript.
 - Build pipeline implemented using Vercel. The mini app can be found hosted [here](https://rick-morty-world.vercel.app).
 - Folder structure fleshed out to give you an idea as to how i would structure an app.
+- I followed the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) pattern for all my commit history.
 
 ## What i would do to finish the app
 
 - Finish out UI components for characters page.
-- Add integration tests for my custom api endpoints.
+  - Build out components for the location and episode info blocks. This should allow us to remove the conditional logic out of the character template.
+- Add integration tests for my custom api endpoints. I would use nock to mock out http requests.
 - Add Cypress E2E tests for pages and Cypress visual regression tests for pages.
 - Improve and flesh out a full design system using css variables.
 - Update the characters api endpoint to consume a query param name to fetch either Rick or Morty characters.
