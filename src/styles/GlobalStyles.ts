@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { breakpoint } from "./BreakpointStyles";
+import { GlobalFontStyles } from "./GlobalFontStyles";
+import { GlobalTypographyStyles } from "./GlobalTypographStyles";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -19,6 +20,8 @@ export const GlobalStyles = createGlobalStyle`
     --small: 0.707rem;
     --background: var(--materialBlack);
     --secondaryBackground: var(--darkPink);
+    --font-primary: 'merriweather-bold', Tahoma, Geneva, Verdana;
+    --font-secondary: 'firaCode-regular', Tahoma, Geneva, Verdana;
   }
   ${reset}
   *, *:before, *:after {
@@ -29,13 +32,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     color: '#1a202c';
     font-size: 62.5%;
-    font-family: 'firaCode-regular', Tahoma, Geneva, Verdana
-  }
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-       height: 100vh;
+    font-family: var(--font-secondary)
   }
   body {
     font-weight: 400;
@@ -43,22 +40,15 @@ export const GlobalStyles = createGlobalStyle`
     color: #000000;
     background-color: var(--background);
   }
-  h1,h2,h3,h4,h5 {
-    font-family: 'merriweather-bold', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.25;
-  }
-  h1 {
-    font-size: var(--h1);
-  }
-  p {
-    margin-bottom: 1rem;
-    font-family: 'firaCode-regular', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: var(--p);
-  }
-  ul {
-    list-style-type: none;
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+       height: 100vh;
   }
   #__next {
     height: 100%;
   }
+  ${GlobalFontStyles}
+  ${GlobalTypographyStyles}
 `;
