@@ -3,7 +3,7 @@
 exports[`Card should render a single card component 1`] = `
 <DocumentFragment>
   <div
-    class="styles__StyledCardWrapper-sc-17jwwg1-0 ABXkl"
+    class="styles__StyledCardWrapper-sc-17jwwg1-0 dMZVdf"
   >
     <div
       class="styles__StyledCardImageWrapper-sc-17jwwg1-1 dVWWhz"
@@ -15,7 +15,7 @@ exports[`Card should render a single card component 1`] = `
           style="display: block; box-sizing: border-box; padding-top: 100%;"
         />
         <img
-          alt="altText"
+          alt="mockName"
           decoding="async"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
@@ -24,13 +24,22 @@ exports[`Card should render a single card component 1`] = `
     </div>
     <ul>
       <li>
-        Name: mockName
+        <span>
+          Name:
+        </span>
+         mockName
       </li>
       <li>
-        Gender: mockGender
+        <span>
+          Gender:
+        </span>
+        mockGender
       </li>
       <li>
-        Species: mockSpecies
+        <span>
+          Species: 
+        </span>
+        mockSpecies
       </li>
     </ul>
     <div
@@ -40,7 +49,7 @@ exports[`Card should render a single card component 1`] = `
         class="styles__StyledLink-sc-17jwwg1-3 llTTzT"
         href="/character/111"
       >
-        View Profile
+        Back to character listing
       </a>
     </div>
   </div>
