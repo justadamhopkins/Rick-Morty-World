@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Running the project
 
-## Getting Started
-
-First, run the development server:
+First, install the node modules
 
 ```bash
-npm run dev
-# or
+yarn
+```
+
+Then, run the development server
+
+```bash
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Project Overview
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This project was built using NextJS, Typescript and CSS-IN-JS. I used Jest and React testing library for unit testing. Finally, the Atomic design principle design pattern was followed when building out UI components. I also included eslint, prettier and pre commit hooks for linting.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Whats done
 
-## Learn More
+- Two custom rest api endpoints developed following the types found in the boilerplate
+  - One api fetches the core character information for the homepage.
+  - One api fetches the single character information including origin, location and episode info.
+- Homepage UI complete
+- Character page UI part complete.
+- Unit tests done for all components.
+- Path aliases implemented using Typescript.
+- Build pipeline implemented using Vercel. The mini app can be found hosted [here](https://rick-morty-world.vercel.app).
+- Folder structure fleshed out to give you an idea as to how i would structure an app.
 
-To learn more about Next.js, take a look at the following resources:
+## What i would do to finish the app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Finish out UI components for characters page.
+- Add integration tests for my custom api endpoints.
+- Add Cypress E2E tests for pages and Cypress visual regression tests for pages.
+- Improve and flesh out a full design system using css variables.
+- Update the characters api endpoint to consume a query param name to fetch either Rick or Morty characters.
+- Add more complex Framer motion animations using variants. Route transitions, staggered children for homepage etc.
+- Implement a React context for storing mass character list information for Rick and Morty. This could fetch all alive rick characters on the server and then in background on the client we could fetch Morty. This would allow us to transition between character lists on home page using a combination of context and local state in components creating a smoother experience for the user.
