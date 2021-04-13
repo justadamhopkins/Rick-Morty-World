@@ -13,4 +13,5 @@ export const StyledTitle = styled(motion.h1)`
   transform: skew(-5deg);
   color: var(--darkPurps);
   padding: 5px;
+  margin: 0px 15px;
 `;
