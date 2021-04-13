@@ -10,7 +10,7 @@ const HomePage: NextPage = ({
   return (
     <TemplateRenderer
       templateName="home"
-      templateProps={{ title: "Rick and Morty FE Tech Test", data }}
+      templateProps={{ data }}
       metaTitle="Rick and Morty"
     />
   );
