@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledHeroWrapper = styled.div`
-  height: 50%;
+export const StyledHeroWrapper = styled.div<{ fluidHeroHeight: boolean }>`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../hero.png");
   background-position: center;
@@ -9,4 +8,9 @@ export const StyledHeroWrapper = styled.div`
   background-size: cover;
   position: relative;
   margin: -2rem;
+  ${({ fluidHeroHeight }) =>
+    !fluidHeroHeight &&
+    css`
+      height: 50%;
+    `};
 `;

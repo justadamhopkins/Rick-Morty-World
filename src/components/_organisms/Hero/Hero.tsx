@@ -1,6 +1,12 @@
 import { FC } from "react";
 import { StyledHeroWrapper } from "./styles";
-
-export const Hero: FC = ({ children }) => {
-  return <StyledHeroWrapper>{children}</StyledHeroWrapper>;
+interface Props {
+  fluidHeroHeight: boolean;
+}
+export const Hero: FC<Props> = ({ children, fluidHeroHeight = false }) => {
+  return (
+    <StyledHeroWrapper fluidHeroHeight={fluidHeroHeight}>
+      {children}
+    </StyledHeroWrapper>
+  );
 };
