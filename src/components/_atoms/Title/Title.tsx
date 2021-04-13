@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { StyledTitle } from "./styles";
-
 interface Props {
   delay?: number;
   copy: string;
