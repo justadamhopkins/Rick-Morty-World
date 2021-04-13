@@ -49,7 +49,7 @@ exports[`Card should render a single card component 1`] = `
         class="styles__StyledLink-sc-17jwwg1-3 llTTzT"
         href="/character/111"
       >
-        Back to character listing
+        View Profile
       </a>
     </div>
   </div>
