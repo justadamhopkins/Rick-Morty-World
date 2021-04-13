@@ -7,7 +7,7 @@ export const StyledHeroWrapper = styled.div<{ fluidHeroHeight: boolean }>`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  margin: -2rem;
+  margin: -2rem -2rem 0;
   ${({ fluidHeroHeight }) =>
     !fluidHeroHeight &&
     css`
