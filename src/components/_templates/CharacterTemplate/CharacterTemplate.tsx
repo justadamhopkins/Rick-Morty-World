@@ -12,7 +12,7 @@ interface CharacterTemplateProps {
 
 export const CharacterTemplate: FC<CharacterTemplateProps> = ({ data }) => {
   const { location, origin, name, avatar } = data;
-  console.log(origin, "origin");
+
   return (
     <StyledCharacterTemplateWrapper>
       <Hero fluidHeroHeight={true}>
