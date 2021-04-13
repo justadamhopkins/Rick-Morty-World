@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Arrow should render an Arrow 1`] = `
+<DocumentFragment>
+  <i
+    class="styles__StyledArrow-sc-1st5r82-0 gfWSqF"
+    direction="left"
+  />
+</DocumentFragment>
+`;
