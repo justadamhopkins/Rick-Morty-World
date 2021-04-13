@@ -1,15 +1,17 @@
 import { GetServerSideProps } from "next";
 import absoluteUrl from "next-absolute-url";
-import { useRouter } from "next/router";
+import { InferGetServerSidePropsType } from "next";
+import { TemplateRenderer } from "_shared/TemplateRenderer/TemplateRenderer";
 
-const Character = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
+const Character = ({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <>
-      <h1>Post: {id}</h1>
-    </>
+    <TemplateRenderer
+      templateName="character"
+      templateProps={{ data }}
+      metaTitle={`Rick and Morty Character - ${data.name}`}
+    />
   );
 };
 
