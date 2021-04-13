@@ -28,7 +28,7 @@ export const Card: FC<Props> = ({
       <StyledCardImageWrapper>
         <Image
           src={image}
-          alt={"altText"}
+          alt={name}
           height={300}
           width={300}
           layout="responsive"
