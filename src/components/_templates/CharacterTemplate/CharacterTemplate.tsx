@@ -12,6 +12,7 @@ interface CharacterTemplateProps {
 
 export const CharacterTemplate: FC<CharacterTemplateProps> = ({ data }) => {
   const { location, origin, name, avatar } = data;
+  console.log(origin, "origin");
   return (
     <StyledCharacterTemplateWrapper>
       <Hero fluidHeroHeight={true}>
@@ -24,16 +25,20 @@ export const CharacterTemplate: FC<CharacterTemplateProps> = ({ data }) => {
         </Link>
         <ProfileImage image={avatar} alt={name} />
         <h2>{name}</h2>
-        <p>Origin: {origin.name}</p>
+        <p>Origin: {origin?.name ?? "Unknown"}</p>
       </Hero>
       <section>
-        <div>
-          <h2>Location details:</h2>
-          <p>Name: {location.name}</p>
-          <p>Type: {location.type}</p>
-          <p>Dimension: {location.dimension}</p>
-          <p>No of residents: {location.noOfResidents}</p>
-        </div>
+        {location ? (
+          <div>
+            <h2>Location details:</h2>
+            <p>Name: {location.name}</p>
+            <p>Type: {location.type}</p>
+            <p>Dimension: {location.dimension}</p>
+            <p>No of residents: {location.noOfResidents}</p>
+          </div>
+        ) : (
+          <p>Location Unknown</p>
+        )}
       </section>
     </StyledCharacterTemplateWrapper>
   );
