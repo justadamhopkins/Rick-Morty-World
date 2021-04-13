@@ -11,7 +11,6 @@ interface CharacterTemplateProps {
 }
 
 export const CharacterTemplate: FC<CharacterTemplateProps> = ({ data }) => {
-  console.log(data);
   return (
     <StyledCharacterTemplateWrapper>
       <Hero fluidHeroHeight={true}>

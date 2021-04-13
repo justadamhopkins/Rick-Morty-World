@@ -11,8 +11,8 @@ interface HomeTemplateProps {
 export const HomeTemplate: FC<HomeTemplateProps> = ({ data }) => {
   return (
     <StyledHomePageWrapper>
-      <Hero>
-        <Title copy="Rick and Morty world" />
+      <Hero fluidHeroHeight={false}>
+        <Title copy="Rick and Morty" />
       </Hero>
       <StyledSection>
         {data.map(({ name, gender, species, id, avatar }) => {
