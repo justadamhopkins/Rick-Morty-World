@@ -101,9 +101,9 @@ export const characterHandler = nc().get(
         species,
         gender,
         avatar: image,
-        origin: originData,
-        location: locationData,
-        episodes,
+        origin: originData ?? null,
+        location: locationData ?? null,
+        episodes: episodes ?? null,
       });
     } catch (error) {
       return res.status(500).json({
