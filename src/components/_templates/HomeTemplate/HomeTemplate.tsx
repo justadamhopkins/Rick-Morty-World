@@ -5,32 +5,29 @@ import { Title } from "_atoms/Title/Title";
 import { Card } from "_molecules/Card/Card";
 
 interface HomeTemplateProps {
-  title: string;
   data: LickApi.ICharacterCore[];
 }
 
-export const HomeTemplate: FC<HomeTemplateProps> = ({ title, data }) => {
+export const HomeTemplate: FC<HomeTemplateProps> = ({ data }) => {
   return (
-    <>
-      <StyledHomePageWrapper>
-        <Hero>
-          <Title copy="Rick and Morty" />
-        </Hero>
-        <StyledSection>
-          {data.map(({ name, gender, species, id, avatar }) => {
-            return (
-              <Card
-                key={id}
-                name={name}
-                gender={gender}
-                species={species}
-                characterId={id}
-                image={avatar}
-              />
-            );
-          })}
-        </StyledSection>
-      </StyledHomePageWrapper>
-    </>
+    <StyledHomePageWrapper>
+      <Hero>
+        <Title copy="Rick and Morty world" />
+      </Hero>
+      <StyledSection>
+        {data.map(({ name, gender, species, id, avatar }) => {
+          return (
+            <Card
+              key={id}
+              name={name}
+              gender={gender}
+              species={species}
+              characterId={id}
+              image={avatar}
+            />
+          );
+        })}
+      </StyledSection>
+    </StyledHomePageWrapper>
   );
 };
