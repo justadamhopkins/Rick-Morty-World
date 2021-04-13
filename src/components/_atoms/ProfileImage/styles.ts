@@ -9,4 +9,5 @@ export const StyledPortfolioWrapper = styled.div`
   vertical-align: middle;
   border: 7px solid var(--secondaryBackground);
   width: 100%;
+  margin-top: 20px;
 `;
