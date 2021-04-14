@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
 import Cors from "micro-cors";
+import { setResponseHeaders } from "_utils/server/setResponseHeaders";
 
 interface CharactersResponse extends Omit<LickApi.ICharacterCore, "avatar"> {
   image: string;
@@ -12,7 +13,7 @@ const cors = Cors({
 
 export const charactersHandler = nc().get(
   async (req: NextApiRequest, res: NextApiResponse) => {
-    res.setHeader("Content-Type", "application/json");
+    setResponseHeaders(res);
 
     try {
       const data = await fetch(
